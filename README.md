@@ -1,5 +1,7 @@
 # webpack4_demo
 
+##安装
+
 webpack练习学习代码
 
 代码转换：TypeScript 编译成 JavaScript、SCSS 编译成 CSS 。
@@ -18,7 +20,11 @@ webpack练习学习代码
 
 ###概念
 
-Entry：入口，webpack执行构建的第一步将从Entry开始，可抽象理解为输入
-output： 属性告诉 webpack 在哪里输出它所创建的 bundles，以及如何命名这些文件
-loader： 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身只理解 JavaScript）
-plugins： loader 被用于转换某些类型的模块，而插件则可以用于执行范围更广的任务
+module.exports = {
+    entry: '',               // 入口文件
+    output: {},              // 出口文件
+    module: {},              // 处理对应模块
+    plugins: [],             // 对应的插件
+    devServer: {},           // 开发服务器配置
+    mode: 'development'      // 模式配置
+}
