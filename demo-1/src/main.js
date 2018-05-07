@@ -1,11 +1,8 @@
-import './css/style.css'; 
+import './css/style.css';
 require("expose-loader?$!jquery");
 
-$(function () {
-	console.log("123")
-	$(".index").html("index")
-
-	
+$(function (argument) {
+	$(".admin").html("admin")
 })
 
 if (module.hot) {

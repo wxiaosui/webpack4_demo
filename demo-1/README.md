@@ -299,9 +299,10 @@ module.exports = {
         extensions: ['.js', '.json', '.css']
     },
 }
+```
+## 提取公共代码
 
-###提取公共代码
-
+```javascript
 optimization: {
     splitChunks: {
         cacheGroups: {
@@ -321,6 +322,32 @@ optimization: {
     }
 }
 ```
+## 提取jQuery
+
+* https://www.zhihu.com/question/33448231
+
+> npm install expose-loader --save-dev
+
+* index.js 
+```javascript
+require("expose-loader?$!jquery");
+```
+
+```javascript
+module: {
+  rules: [{
+    test: require.resolve('jquery'),
+    use: [{
+      loader: 'expose-loader',
+      options: 'jQuery'
+    },{
+      loader: 'expose-loader',
+      options: '$'
+    }]
+  }]
+}
+```
+
 ## 指定webpack配置文件
 
 *    package.json
